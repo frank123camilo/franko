@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Postear Publicación</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <meta name="description" content="Red social para interactuar sobre el arte, cultura y deporte de tamesis antioquia" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Osmanya&family=Permanent+Marker&family=Pompiere&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet" />
+    <link rel="icon" href="{% static 'app_funcionalidad/img/img_corporativa.png' %}" />
+    <link href="{% static 'app_funcionalidad/css/forms.css' %}" rel="stylesheet" />
+</head>
+
+<body class="body-form">
+    <main class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+
+
+                <form enctype="multipart/form-data" method="post" class="form-olvide border-formularios" id="formulario_publi" novalidate>
+
+                    <div class="d-flex text-center" style="display: flex; align-items: center; justify-content: center">
+                        <img src="{% static 'app_funcionalidad/img/img_corporativa.png' %}" alt="icono" class="logo-registro text-center">
+                        <h4 class="row align-items-center titulo-from-publi">
+                            Publicación
+                        </h4>
+                    </div>
+                    <a href="{% url "publicaciones" %}" class="x-registro">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-x-circle x-olvi-registro" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                        </svg>  
+                    </a>
+
+
+
+                    <div class="mb-3">
+                        <input type="hidden" name="id-publi" id="id-publi">
+                        <label for="titulo_publi" class="form-label">Titulo</label>
+                        <input type="text" name="alias" class="form-control formulario_input" id="titulo_publi">
+                    </div>  
+                    <div class="mb-3">
+                        <label for="descrip_publi" class="form-label">Descripción</label>
+                        <input type="text" name="descripcion" class="form-control formulario_input" id="descrip_publi">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div>
+                                <label for="catego_publi" class="form-label">Categoría</label>
+                                <select name="categorias" id="catego_publi" class="form-control" required>
+                                    <option value="">Seleccionar categoría</option>
+                                    <option value="arte">Arte</option>
+                                    <option value="cultura">Cultura</option>
+                                    <option value="deporte">Deporte</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="upload-container">
+                                <input type="file" id="file_publi" accept="image/*">
+                                <label for="file_publi" id="uploadLabel">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up icono-subir" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5m-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5"/>
+                                    </svg>
+                                    <span>Archivo multimedia</span>
+                                </label>
+                                <div id="imagePreview" class="preview-container">
+                                    <img id="previewImage" src="" alt="Imagen previa">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3 text-center">
+                        <button type="submit" class="btn boton-agregar" id="btn_ingresar">
+                            Publicar
+                        </button>
+                    </div>
+                </form>
+
+
+
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{% static 'app_funcionalidad/js/form_publicacion.js' %}"></script>
+    
+    
+
+</body>
+</html>

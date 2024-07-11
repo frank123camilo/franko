@@ -1,0 +1,104 @@
+{% extends "D:/Cultural__Code/Cultural_Expression/app_funcionalidad/templates/app_funcionalidad/base_usu.html" %}
+
+{% load static %}
+
+
+{% block titulo-document %}
+
+Convocatorias
+
+{% endblock %}
+
+
+{% block botòn-crear %}
+<div class="d-grid gap-2 d-md-flex justify-content-md-end contenedor-boton">
+  <a href="{% url "formulario_convocatoria" %}">
+    <button class="btn-crear btn-primary me-md-2" type="button"><strong>Crear Convocatoria</strong></button>
+  </a>
+</div>  
+{% endblock %}
+
+
+{% block alias %} Maritza Ospina {% endblock %}
+
+
+
+
+{% block contenido-post %}
+
+<div class="contenido-posteado contenido-post">
+
+  <div class="convocatorias">
+    
+    <div class="row">
+      <div class="col-2 col-lg-auto mt-4">
+        <a href="{% url "perfil" %}">
+          <i>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="ico bi bi-person-circle" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+            </svg>
+          </i>
+        </a>
+      </div>
+  
+  
+      <div class="col-sm-10 col-lg-9 informacion">
+        <div class="post mt-4">
+  
+          <a href="#" class="nombre">Fredy Cardona</a>
+          <p class="fecha">07/10/2024</p>
+  
+          <div class="border-info-convocatoria">
+  
+            <p class="titulo"></p>
+            <p class="descripcion">Amigos, la alcaldía dará 100 becas totalmente gratuitas para asistir a clases de danza, teatro y canto. Anímense es una gran oportunidad de estudiar y crecer en cualquiera de estos campos tan hermosos.
+            Cualquier inquietud sobre la convocatoria no duden escribir al chat.</p>
+            
+            <div class="contenedor-fechas-ini-fin">
+  
+              <div class="fecha-inicio">
+                <h3><strong>Fecha Inicio</strong></h3>
+                <p class="fecha-inicio">08/10/2024</p>
+              </div>
+  
+              <div class="fecha-fin">
+                <h3><strong>Fecha Fin</strong></h3>
+                <p class="fecha-fin">08/11/2024</p>
+              </div>
+  
+              </div>
+  
+              <h3><strong>Lugar</strong></h3>
+              <p class="lugar">Parque Educativo Cartama</p>
+  
+            </div>
+            
+  
+            <div class="iconos-reaccion">
+  
+              <div class="heart-btn">
+                <div class="content">
+                  <span class="heart"></span>
+                </div> 
+              </div>
+  
+  
+              <a href="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="comentario bi-chat-right" viewBox="0 0 16 16">
+                  <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/>
+                </svg>
+              </a>
+                  
+            </div>
+  
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
